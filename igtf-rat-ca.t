@@ -1,9 +1,9 @@
-# Test suite for CA certificates under IGTF RAT Audit 2009-01
-# 
-# Check new certificate requests for RSA keys with weak exponents (< 65537)
-# Check new certificate requests for known weak Debian OpenSSL keys
-# Verify new certificates and CRLs are not issued using MD5
-# 
+## Test suite for CA certificates under IGTF RAT Audit 2009-01
+## 
+## Check new certificate requests for RSA keys with weak exponents (< 65537)
+## Check new certificate requests for known weak Debian OpenSSL keys
+## Verify new certificates and CRLs are not issued using MD5
+## 
 
 use CheckCertsTest;
 for my $certfile(@certlist) {
