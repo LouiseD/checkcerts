@@ -40,16 +40,6 @@ for my $certfile (@certlist) {
 		}
 	}
 
-	# 3.2.3 For certificates issued to networked entities, typically the (primary) FQDN of the server
-	# is included in the commonName. TODO: For regular network entity certificates, there MUST NOT 
-	# be any additional characters in the commonName.
-	for my $entry (@$entries){
-        if( is_member($entry->type(), "CN" )) {
-			like($entry->value, qr/host\/([a-z0-9]+\.)+[a-z0-9]+/, 
-				 "For regular network entity certificates, there MUST NOT be any additional characters in the DN commonName.");
-		}
-	}
-	
 	# 3.2.4 If using DC, DCs should be at the start
 	if($subject_name->has_entry('DC')) {
         my $loc = $subject_name->get_index_by_type('DC');
