@@ -1,7 +1,8 @@
-#
-# Test suite for CRLs under IGTF RAT Audit 2009-01
-# Verify new certificates and CRLs are not issued using MD5
-#
+##
+## Test suite for CRLs under IGTF RAT Audit 2009-01
+##
+## Verify new certificates and CRLs are not issued using MD5
+##
 
 
 use CheckCertsTest;
