@@ -130,7 +130,7 @@ for my $certfile(@certlist) {
 	else{
 		my $subkeyid = (join ":", map{sprintf "%X", ord($_)} split //, $$exts{'subjectKeyIdentifier'}->keyid_data());
 		my $authkeyid = (join ":", map{sprintf "%X", ord($_)} split //, $$exts{'authorityKeyIdentifier'}->keyid_data());;
-		like($authkeyid, qr/$subkeyid/, "The keyid of authorityKeyIdentifier should be the same as subjectKeyIdentifer (2.4.7)");
+		ok($authkeyid eq $subkeyid, "The keyid of authorityKeyIdentifier should be the same as subjectKeyIdentifer (2.4.7)");
 	}
 	# If AKID exists, only the keyIdentifier attribute should be included
 	$$exts{'authorityKeyIdentifier'} and 
